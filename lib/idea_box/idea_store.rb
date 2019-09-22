@@ -42,6 +42,6 @@ class IdeaStore
   end
   
   def self.database
-    @database ||= YAML::Store.new "ideabox"
+    @database ||= YAML::Store.new "db/ideabox"
   end
 end
