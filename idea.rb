@@ -30,6 +30,23 @@ class Idea
       database['ideas'].delete_at(position.to_i)
     end
   end
+  
+  def self.find(id)
+    raw_idea = find_raw_idea(id)
+    Idea.new(raw_idea[:title], raw_idea[:description])
+  end
+  
+  def self.find_raw_idea(id)
+    database.transaction do
+      database['ideas'].at(id.to_i)
+    end
+  end
+
+  def self.update(id, data)
+    database.transaction do
+      database['ideas'][id] = data
+    end
+  end
 
   def self.database
     @database ||= YAML::Store.new "ideabox"
