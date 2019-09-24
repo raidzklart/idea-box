@@ -11,6 +11,7 @@ class IdeaStore
   def self.create(data)
     database.transaction do
       database['ideas'] << data
+      puts data
     end
   end
   

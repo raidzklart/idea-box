@@ -1,11 +1,13 @@
+require 'time'
 class Idea
   include Comparable
-  attr_reader :title, :description, :rank, :id
+  attr_reader :title, :description, :rank, :id, :created_at
   def initialize(attributes)
     @title = attributes["title"]
     @description = attributes["description"]
     @rank = attributes["rank"] || 0
     @id = attributes["id"]
+    @created_at = Time.now.strftime('%a_%d/%m/%Y:%H:%M:%S')
   end
 
   def save
@@ -20,7 +22,8 @@ class Idea
     {
       "title" => title,
       "description" => description,
-      "rank" => rank
+      "rank" => rank,
+      "created_at" => created_at
     }
   end
 
