@@ -1,0 +1,45 @@
+
+<h3>Ideas by Day</h3>
+
+<h4>Monday:</h4>
+<% ideas.each do |idea| %>
+  <% if idea.created_at.include? "Mon"%>
+    <p><b><%= idea.title %></b></p>
+  <% end %>
+<% end %>
+<h4>Tuesday:</h4>
+<% ideas.each do |idea| %>
+  <% if idea.created_at.include? "Tue"%>
+    <p><b><%= idea.title %></b>: <%= idea.description %></p>
+  <% end %>
+<% end %>
+<h4>Wednesday:</h4>
+<% ideas.each do |idea| %>
+  <% if idea.created_at.include? "Wed"%>
+    <p><b><%= idea.title %></b>: <%= idea.description %></p>
+  <% end %>
+<% end %>
+<h4>Thursday:</h4>
+<% ideas.each do |idea| %>
+  <% if idea.created_at.include? "Thu"%>
+    <p><b><%= idea.title %></b>: <%= idea.description %></p>
+  <% end %>
+<% end %>
+<h4>Friday:</h4>
+<% ideas.each do |idea| %>
+  <% if idea.created_at.include? "Fri"%>
+    <p><b><%= idea.title %></b>: <%= idea.description %></p>
+  <% end %>
+<% end %>
+<h4>Saturday:</h4>
+<% ideas.each do |idea| %>
+  <% if idea.created_at.include? "Sat"%>
+    <p><b><%= idea.title %></b>: <%= idea.description %></p>
+  <% end %>
+<% end %>
+<h4>Sunday:</h4>
+<% ideas.each do |idea| %>
+  <% if idea.created_at.include? "Sun"%>
+    <p><b><%= idea.title %></b>: <%= idea.description %></p>
+  <% end %>
+<% end %>
